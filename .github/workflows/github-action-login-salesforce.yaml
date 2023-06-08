@@ -21,6 +21,17 @@ jobs:
 #      - name: Authenticate with Salesforce CLI
 #         run: |
 #         #sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com --setdefaultusername
+
+
+#old salesforce version
+#https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm
+#      - name: Authenticate with Salesforce CLI
+#        run: |
+#         sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com -u ${{ secrets.SALESFORCE_USERNAME }} -p ${{ secrets.SALESFORCE_PASSWORD }}
+
+
+#new salesforce version
+#https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm
       - name: Authenticate with Salesforce CLI
         run: |
-         sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com -u ${{ secrets.SALESFORCE_USERNAME }} -p ${{ secrets.SALESFORCE_PASSWORD }}
+          sfdx auth:web:login --alias MyOrgAlias -r https://login.salesforce.com -s
