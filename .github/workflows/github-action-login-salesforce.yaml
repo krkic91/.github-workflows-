@@ -20,4 +20,5 @@ jobs:
 
       - name: Authenticate with Salesforce CLI
         run: |
-          echo ${{ secrets.SALESFORCE_CONSUMER_KEY }} | sfdx force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_SECRET }} --jwtkeyfile ${{ secrets.SALESFORCE_SERVER_KEY }} --username krkic@kbd.com --setdefaultdevhubusername --setdefaultusername
+         sfdx force:auth:web:login -u ${{ secrets.SALESFORCE_USERNAME }} -p ${{ secrets.SALESFORCE_PASSWORD }}
+
