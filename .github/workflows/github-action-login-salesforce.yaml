@@ -35,7 +35,7 @@ jobs:
 #      - name: Authenticate with Salesforce CLI
 #        run: |
 #          sfdx auth:web:login --alias MyOrgAlias -r https://login.salesforce.com -s
-#asd
+
       - name: Authenticate with Salesforce CLI
         run: |
           echo ${{ secrets.SALESFORCE_CONSUMER_KEY }} | sfdx force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwtkeyfile ${{ secrets.SALESFORCE_SERVER_KEY }} --username krkic@kbd.com --setdefaultdevhubusername --setdefaultusername
