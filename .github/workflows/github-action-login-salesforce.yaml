@@ -20,5 +20,5 @@ jobs:
           
       - name: Authenticate with Salesforce CLI
         run: |
-         sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com --setdefaultusername
-
+         #sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com --setdefaultusername
+         sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com -u ${{ secrets.SALESFORCE_USERNAME }} -p ${{ secrets.SALESFORCE_PASSWORD }}
