@@ -18,7 +18,9 @@ jobs:
           tar xJf sfdx.tar.xz -C sfdx --strip-components 1
           sudo ./sfdx/install
           
+#      - name: Authenticate with Salesforce CLI
+#         run: |
+#         #sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com --setdefaultusername
       - name: Authenticate with Salesforce CLI
         run: |
-         #sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com --setdefaultusername
          sfdx force:auth:web:login --setalias MyOrgAlias --instanceurl https://login.salesforce.com -u ${{ secrets.SALESFORCE_USERNAME }} -p ${{ secrets.SALESFORCE_PASSWORD }}
