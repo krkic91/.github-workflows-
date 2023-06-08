@@ -1,2 +1,3 @@
 #create workflow for salesforce login
- 
+name: Login salesforce to test
+on: 
