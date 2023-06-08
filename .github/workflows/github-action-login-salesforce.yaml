@@ -7,7 +7,6 @@ on: [push]
 jobs:
   my_first_jobs:
     runs-on: ubuntu-lastest
-    
        steps:
         - name: Checkout repository
           uses: actions/checkout@v2
