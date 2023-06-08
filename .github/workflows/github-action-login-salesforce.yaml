@@ -7,17 +7,17 @@ on: [push]
 jobs:
   my_first_jobs:
     runs-on: ubuntu-lastest
-       steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-        - name: Set up Salesforce CLI
-            run: |
-              curl https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz --output sfdx.tar.xz
-              mkdir sfdx
-              tar xJf sfdx.tar.xz -C sfdx --strip-components 1
-              sudo ./sfdx/install
+      - name: Set up Salesforce CLI
+        run: |
+          curl https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz --output sfdx.tar.xz
+          mkdir sfdx
+          tar xJf sfdx.tar.xz -C sfdx --strip-components 1
+          sudo ./sfdx/install
 
-        - name: Authenticate with Salesforce CLI
-            run: |
-              echo ${{ secrets.SALESFORCE_CONSUMER_KEY }} | sfdx force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_SECRET }} --jwtkeyfile server.key --username your-email@example.com --setdefaultdevhubusername --setdefaultusername
+      - name: Authenticate with Salesforce CLI
+        run: |
+          echo ${{ secrets.SALESFORCE_CONSUMER_KEY }} | sfdx force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_SECRET }} --jwtkeyfile server.key --username your-email@example.com --setdefaultdevhubusername --setdefaultusername
