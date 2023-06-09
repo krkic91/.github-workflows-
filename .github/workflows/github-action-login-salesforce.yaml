@@ -24,8 +24,6 @@ jobs:
 
 
 
-
-#final_code
 #new salesforce version
 #https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm
       - name: Authenticate with Salesforce CLI
